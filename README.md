@@ -8,7 +8,9 @@ I often see people getting confused in a java program whether something is being
 For Instance, if you have following variables defined, see how the memory map looks like:
 
 int a = 123;
+
 String str = “Hello”;
+
 BufferedString obj = new BufferedString();
 
 
