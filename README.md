@@ -1,4 +1,5 @@
 # Enterprise JavaBeans
+EJB stands of Enterprise Java Beans, a development artchitecture used to produce highly scala ble and robust enterprise level applications. EJB is an essential part of J2EE platform. 
 
 http://www.tutorialspoint.com/ejb/ 
 
