@@ -1,9 +1,11 @@
 # Enterprise JavaBeans
 EJB stands of Enterprise Java Beans, used to produce highly scalable and robust enterprise level applications. EJB is an essential part of J2EE platform. It provides an architechture to develop and deploy component based application. There are three types of EJB:
-1. Session Bean
-2. Entity Bean
-3. Message Driven Bean
 
+                    |                   |
+:------------------:|:-----------------:
+ **Session Bean** | Stores the data for the single session. It could be stateful or stateless. It get destroyed as soon as session terminates 
+ Entity Bean  |   
+ Message Driven Bean| 
 
 
 http://www.tutorialspoint.com/ejb/ 
