@@ -1,3 +1,8 @@
+# Enterprise JavaBeans
+
+http://www.tutorialspoint.com/ejb/ 
+
+
 # Passing by value or Passing by reference
 
 I often see people getting confused in a java program whether something is being passed by value or reference. Here is the best way to think, the simple way: In java __everything is passing by value__. Period. Just keep in mind following:
