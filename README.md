@@ -1,3 +1,7 @@
+# Understanding Multi Modules Maven project.
+https://maven.apache.org/guides/mini/guide-multiple-modules.html
+
+
 # Enterprise JavaBeans
 EJB stands of Enterprise Java Beans, used to produce highly scalable and robust enterprise level applications. EJB is an essential part of J2EE platform. It provides an architechture to develop and deploy component based application. There are three types of EJB:
 
