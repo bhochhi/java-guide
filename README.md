@@ -11,9 +11,7 @@ EJB stands of Enterprise Java Beans, used to produce highly scalable and robust 
  **Entity Bean**  | used for the persistent data that can be save and retreived from database.   
  **Message Driven Bean**| used in context of JMS, consumes JMS messsages from external entities and act accordingly. 
 
-Let's checkout the simple example.
-
-http://www.tutorialspoint.com/ejb/ 
+Let's checkout the [simple example]().
 
 
 # Passing by value or Passing by reference
