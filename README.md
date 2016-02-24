@@ -1,6 +1,3 @@
-###Understanding Multi Modules Maven project.
-https://maven.apache.org/guides/mini/guide-multiple-modules.html
-
 
 ###[What is JNDI and how to use it?](https://github.com/bhochhi/java-guide/wiki/What-is-JNDI-and-why-we-needed-it%3F)
 
