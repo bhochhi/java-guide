@@ -1,17 +1,9 @@
 # Understanding Multi Modules Maven project.
 https://maven.apache.org/guides/mini/guide-multiple-modules.html
 
+# [What is JNDI and how to use it?](https://github.com/bhochhi/java-guide/wiki/What-is-JNDI-and-why-we-needed-it%3F)
 
-# Enterprise JavaBeans
-EJB stands of Enterprise Java Beans, used to produce highly scalable and robust enterprise level applications. EJB is an essential part of J2EE platform. It provides an architechture to develop and deploy component based application. There are three types of EJB:
-
-|||
-|------------------:|:-----------------
- **Session Bean** | Stores the data for the single session. It could be stateful or stateless. It get destroyed as soon as session terminates 
- **Entity Bean**  | used for the persistent data that can be save and retreived from database.   
- **Message Driven Bean**| used in context of JMS, consumes JMS messsages from external entities and act accordingly. 
-
-Let's checkout the [simple example]().
+# [What is Enterprise JavaBeans(EJB)?](https://github.com/bhochhi/java-guide/wiki/What-is-Enterprise-JavaBeans(EJB)%3F)
 
 
 # Passing by value or Passing by reference
