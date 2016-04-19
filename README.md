@@ -5,3 +5,4 @@
 
 ###[What is Passing by value or Passing by reference?](https://github.com/bhochhi/java-guide/wiki/what-is-Passing-by-value-or-Passing-by-reference)
 
+####[Some guidlines](https://dzone.com/articles/zlwell-written-java?utm_medium=feed&utm_source=feedpress.me&utm_campaign=Feed:%20dzone%2Fjava)
