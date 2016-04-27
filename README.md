@@ -18,3 +18,6 @@ this creates the simple.jar in current directory with com.codewithme.bhochhi.Mai
 [design patterns implemented in java]9https://github.com/iluwatar/java-design-patterns)
 
 https://github.com/akullpp/awesome-java 
+https://www.caveofprogramming.com/library/index.html
+http://www.programcreek.com/
+
