@@ -10,11 +10,16 @@
 
 #####[Creating excutable jar file]()
 ```jar cvfe simple.jar com.codewithme.bhochhi.Main -C bin/ com```
-this creates the simple.jar in current directory with com.codewithme.bhochhi.Main as entry class in manifest.mf file using the files inside bin/ directory. 
+this creates the simple.jar in current directory with com.codewithme.bhochhi.Main as entry class in manifest.mf file using the files inside bin/ directory.
 
 
 ####[Some guidlines](https://dzone.com/articles/zlwell-written-java?utm_medium=feed&utm_source=feedpress.me&utm_campaign=Feed:%20dzone%2Fjava)
 
 [design patterns implemented in java]9https://github.com/iluwatar/java-design-patterns)
 
-https://github.com/akullpp/awesome-java 
+[Working with Concurrency]()
+http://winterbe.com/posts/2015/04/07/java8-concurrency-tutorial-thread-executor-examples/
+http://javarevisited.blogspot.com/2015/01/how-to-use-future-and-futuretask-in-Java.html
+
+
+https://github.com/akullpp/awesome-java

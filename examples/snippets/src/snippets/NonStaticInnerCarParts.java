@@ -7,7 +7,8 @@ public class NonStaticInnerCarParts {
 
 	public class Wheel {
 		public Wheel() {
-			System.out.println("Wheel created!" + factoryId);
+			
+			System.out.println("Wheel created!" + factoryId+Wheel.class.getClassLoader());
 		}
 	}
 
