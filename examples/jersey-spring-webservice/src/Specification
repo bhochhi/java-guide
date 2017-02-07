@@ -1,0 +1,93 @@
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.core.Application;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+import org.glassfish.jersey.server.ResourceConfig;
+import org.glassfish.jersey.test.JerseyTest;
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
+
+
+@RunWith(Enclosed.class)
+public class DynamicMessagesResourceSpecs {
+
+	public static class WhenApplicationIsLaunched extends JerseyTest {
+
+		@Override
+		protected Application configure() {
+			return new ResourceConfig(DynamicMessagesResource.class);
+		}
+
+		@Test
+		public void shouldReturnUsageForGetMethod() {
+			String response = target("").request().get(String.class);
+			assertTrue(response.contains("DynamicMessages Resource is ready:"));
+		}
+
+		@Test
+		public void shouldHavePostMethodType() throws Exception {
+			assertEquals(
+					"@javax.ws.rs.POST()",
+					DynamicMessagesResource.class
+							.getDeclaredMethod("getDynamicMessages",
+									Configuration.class)
+							.getAnnotation(javax.ws.rs.POST.class).toString());
+		}
+
+		@Test
+		public void shouldHaveConfigurationTypeForAsParameter()
+				throws Exception {
+			Assert.assertNotNull(DynamicMessagesResource.class
+					.getDeclaredMethod("getDynamicMessages",
+							Configuration.class));
+		}
+
+		@Test
+		public void shouldConsumesJson() throws Exception {
+			assertEquals(
+					"application/json",
+					DynamicMessagesResource.class
+							.getDeclaredMethod("getDynamicMessages",
+									Configuration.class)
+							.getAnnotation(javax.ws.rs.Consumes.class).value()[0]);
+		}
+
+		@Test
+		public void shouldProducesJson() throws Exception {
+			assertEquals(
+					"application/json",
+					DynamicMessagesResource.class
+							.getDeclaredMethod("getDynamicMessages",
+									Configuration.class)
+							.getAnnotation(javax.ws.rs.Produces.class).value()[0]);
+		}
+
+		@Test
+		public void shouldReturnJsonResponseWhenCallingDynamicMessagesResource() {		
+			String request = "{	\n"
+			+ "			\"clientName\":	\"clientName\",\n"
+			+ "			\"groupId\":	\"groupId\",\n"
+			+ "			\"testId\":	\"test\",\n"
+			+ "			\"city\":		\"city\",\n"
+			+ "			\"state\":	\"state\",\n"
+			+ "			\"msa\":		\"msa\",\n"
+			+ "			\"zipCode\":	\"zipCode\",\n"
+			+ "			\"appId\":	\"appId\",\n"
+			+ "			\"shortDMA\":	\"shortDMA\",\n"
+			+ "			\"packages\":	 [{\"packageId\": \"packageId\",\"planName\": \"planName\"}]\n"
+			+ "		}";
+			Response response = target("").request().buildPost(Entity.json(request)).invoke(Response.class);
+			assertNotNull(response);
+			assertEquals(MediaType.APPLICATION_JSON, response.getMediaType().toString());
+		}
+	}
+
+}
