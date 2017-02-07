@@ -1,0 +1,26 @@
+
+import org.junit.Before;
+import org.junit.runner.RunWith;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestExecutionListeners;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
+
+@Configuration
+@RunWith(SpringJUnit4ClassRunner.class)
+@TestExecutionListeners( { DependencyInjectionTestExecutionListener.class })
+@ContextConfiguration(locations = "classpath:applicationContext.xml")
+public abstract class Specification {
+
+	public abstract void given();
+
+	public abstract void when();
+
+	@Before
+	public void init() {
+		given();
+		when();
+	}
+
+}
