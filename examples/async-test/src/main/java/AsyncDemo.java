@@ -12,7 +12,7 @@ public class AsyncDemo {
 
     private JsonNode body;
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  throws Exception{
 //        new AsyncDemo().singlePostCall();
         new AsyncDemo().multipleCalls();
     }
@@ -32,10 +32,21 @@ public class AsyncDemo {
         }
     }
 
-    private void multipleCalls() {
+    private void multipleCalls() throws Exception {
+        AsyncCall().get();
+        AsyncCall().get();
+
+        try{
+//            Unirest.shutdown();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
-    Future<HttpResponse<JsonNode>> future1 = Unirest.post("http://httpbin.org/post")
+
+    private Future<HttpResponse<JsonNode>> AsyncCall() {
+
+    return Unirest.post("http://httpbin.org/post")
             .header("accept", "application/json")
             .field("param1", "value1")
             .field("param2", "value2")
@@ -50,8 +61,7 @@ public class AsyncDemo {
                     Map headers = response.getHeaders();
                     JsonNode body = response.getBody();
                     InputStream rawBody = response.getRawBody();
-                    System.out.println("Header: " + headers.toString());
-                    System.out.println("Body: " + body.toString());
+                    System.out.println("Body: " + body);
                 }
 
                 public void cancelled() {
@@ -59,58 +69,5 @@ public class AsyncDemo {
                 }
 
             });
-
-
-    Future<HttpResponse<JsonNode>> future2 = Unirest.post("http://httpbin.org/post")
-            .header("accept", "application/json")
-            .field("param1", "value1")
-            .field("param2", "value2")
-            .asJsonAsync(new Callback<JsonNode>() {
-
-                public void failed(UnirestException e) {
-                    System.out.println("The request has failed");
-                }
-
-                public void completed(HttpResponse<JsonNode> response) {
-                    int code = response.getStatus();
-                    Map headers = response.getHeaders();
-                    JsonNode body = response.getBody();
-                    InputStream rawBody = response.getRawBody();
-                    System.out.println("Header: " + headers.toString());
-                    System.out.println("Body: " + body.toString());
-                }
-
-                public void cancelled() {
-                    System.out.println("The request has been cancelled");
-                }
-
-            });
-
-    Future<HttpResponse<JsonNode>> future3 = Unirest.post("http://httpbin.org/post")
-            .header("accept", "application/json")
-            .field("param1", "value1")
-            .field("param2", "value2")
-            .asJsonAsync(new Callback<JsonNode>() {
-
-                public void failed(UnirestException e) {
-                    System.out.println("The request has failed");
-                }
-
-                public void completed(HttpResponse<JsonNode> response) {
-                    int code = response.getStatus();
-                    Map headers = response.getHeaders();
-                    JsonNode body = response.getBody();
-                    InputStream rawBody = response.getRawBody();
-                    System.out.println("Header: " + headers.toString());
-                    System.out.println("Body: " + body.toString());
-                }
-
-                public void cancelled() {
-                    System.out.println("The request has been cancelled");
-                }
-
-            });
-
-
-
+    }
 }
