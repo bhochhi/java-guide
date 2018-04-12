@@ -1,39 +1,40 @@
 
 
 
+import org.apache.http.HttpResponse;
+import org.asynchttpclient.AsyncHttpClient;
+import org.asynchttpclient.*;
+
 import java.util.ArrayList;
         import java.util.List;
-        import java.util.Random;
-        import java.util.concurrent.Callable;
-        import java.util.concurrent.ExecutionException;
-        import java.util.concurrent.Executors;
-        import java.util.concurrent.Future;
-        import java.util.concurrent.ThreadPoolExecutor;
-        import java.util.concurrent.TimeUnit;
+import java.util.Random;
+import java.util.concurrent.*;
+
+import static org.asynchttpclient.Dsl.asyncHttpClient;
 
 public class AsyncUsingFuture
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws Exception
     {
-        ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(10);
+        ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(5);
 
-        List<Future<Integer>> resultList = new ArrayList<>();
+        String[] urls ={"http://httpbin.org/get?value=1","http://httpbin.org/get?value=2","http://httpbin.org/get?value=3","http://httpbin.org/get?value=4","http://httpbin.org/get?value=5","http://httpbin.org/get?value=6"};
 
-        Random random = new Random();
+        List<Callable<Response>> taskList = new ArrayList<>();
 
-        for (int i=0; i<4; i++)
-        {
-            Integer number = random.nextInt(10);
-            FactorialCalculator calculator  = new FactorialCalculator(number);
-            Future<Integer> result = executor.submit(calculator);
-            resultList.add(result);
+
+        for (String uri: urls) {
+            taskList.add(new AsyncCallable(uri));
         }
 
-        for(Future<Integer> future : resultList)
+        List<Future<Response>> futures = executor.invokeAll(taskList);
+
+
+        for(Future<Response> future : futures)
         {
             try
             {
-                System.out.println("Future result is - " + " - " + future.get() + "; And Task done is " + future.isDone());
+                System.out.println("Future result is - " + " - " + future.get(2, TimeUnit.SECONDS).getResponseBody() + "; And Task done is " + future.isDone());
             }
             catch (InterruptedException | ExecutionException e)
             {
@@ -45,27 +46,25 @@ public class AsyncUsingFuture
     }
 }
 
-class FactorialCalculator implements Callable<Integer>
+class AsyncCallable implements Callable<Response>
 {
 
-    private Integer number;
+    private String url;
+    private AsyncHttpClient asyncHttpClient;
 
-    public FactorialCalculator(Integer number) {
-        this.number = number;
+    public AsyncCallable(String url) {
+       this.url = url;
+        this.asyncHttpClient = asyncHttpClient();
     }
 
     @Override
-    public Integer call() throws Exception {
-        int result = 1;
-        if ((number == 0) || (number == 1)) {
-            result = 1;
-        } else {
-            for (int i = 2; i <= number; i++) {
-                result *= i;
-                TimeUnit.MILLISECONDS.sleep(20);
-            }
-        }
-        System.out.println("Result for number - " + number + " -> " + result);
-        return result;
+    public Response call() throws Exception {
+        Thread.sleep(new Random().nextInt(1000));
+        System.out.println("calling url: "+url);
+        Response response = this.asyncHttpClient.prepareGet(url).execute().get();
+        this.asyncHttpClient.close();
+        System.out.println("response for "+url+" done");
+        return response;
+
     }
 }

@@ -28,4 +28,8 @@ dependencies {
     // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
     // 'test.useTestNG()' to your build script.
     testCompile 'junit:junit:3.8.2'
+
+    // https://mvnrepository.com/artifact/org.asynchttpclient/async-http-client
+    compile group: 'org.asynchttpclient', name: 'async-http-client', version: '2.4.5'
+
 }
