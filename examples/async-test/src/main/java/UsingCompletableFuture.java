@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.concurrent.*;
+import java.util.function.Consumer;
 
 import static sun.swing.SwingUtilities2.submit;
 
@@ -28,7 +29,11 @@ public class UsingCompletableFuture {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         Future<String> response = new UsingCompletableFuture().calculateAsync();
         System.out.println("Response: "+ response.get());
+
     }
+
+
+
 
     public Future<String> calculateAsync() throws InterruptedException {
         CompletableFuture<String> completableFuture
@@ -50,12 +55,14 @@ public class UsingCompletableFuture {
 }
 
 
+
+
 class AsyncResponse{
 
 
 }
 
-class AsyncRequest{
+class CompletableTask{
 
 }
 
@@ -63,7 +70,7 @@ class AsyncUsingCompleteableFuture{
 
 
 
-    List<AsyncResponse> invokeAll(List<AsyncRequest> requests){
+    List<AsyncResponse> invokeAll(List<?> requests){
         return null;
     }
 
