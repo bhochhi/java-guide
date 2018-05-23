@@ -1,7 +1,10 @@
 import java.util.List;
 import java.util.concurrent.*;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
+import static junit.framework.Assert.assertEquals;
 import static sun.swing.SwingUtilities2.submit;
 
 public class UsingCompletableFuture {
@@ -27,29 +30,34 @@ public class UsingCompletableFuture {
      *
      */
     public static void main(String[] args) throws InterruptedException, ExecutionException {
-        Future<String> response = new UsingCompletableFuture().calculateAsync();
-        System.out.println("Response: "+ response.get());
 
-    }
+        CompletableFuture<String> future1
+                = CompletableFuture.supplyAsync(() -> "Hello");
+        CompletableFuture<String> future2
+                = CompletableFuture.supplyAsync(() -> "Beautiful");
+        CompletableFuture<String> future3
+                = CompletableFuture.supplyAsync(() -> "World");
+
+        String combined = Stream.of(future1, future2, future3)
+                .map(CompletableFuture::join)
+                .collect(Collectors.joining(" "));
+
+        assertEquals("Hello Beautiful World", combined);
 
 
-
-
-    public Future<String> calculateAsync() throws InterruptedException {
         CompletableFuture<String> completableFuture
-                = new CompletableFuture<>();
+                = CompletableFuture.supplyAsync(() -> "Hello");
 
-        ExecutorService executorService = Executors.newCachedThreadPool();
+        CompletableFuture<String> future = completableFuture
+                .thenApplyAsync(s -> s + " World11");
 
-        executorService.submit(() -> {
-            Thread.sleep(1);
-            completableFuture.complete("Hello");
-            return null;
-        });
-        executorService.awaitTermination(2, TimeUnit.MILLISECONDS);
-        executorService.shutdown();
-        return completableFuture;
+        assertEquals("Hello World", future.get());
     }
+
+
+
+
+
 
 
 }
