@@ -1,14 +1,17 @@
 
-#####[BDD using cucumber for unit tests](http://www.hascode.com/2014/12/bdd-testing-with-cucumber-java-and-junit/#Dependencies)
+##### [BDD using cucumber for unit tests](http://www.hascode.com/2014/12/bdd-testing-with-cucumber-java-and-junit/#Dependencies)
 
-###[What is JNDI and how to use it?](https://github.com/bhochhi/java-guide/wiki/What-is-JNDI-and-why-we-needed-it%3F)
+#### [What is JNDI and how to use it?](https://github.com/bhochhi/java-guide/wiki/What-is-JNDI-and-why-we-needed-it%3F)
 
-###[What is Enterprise JavaBeans(EJB)?](https://github.com/bhochhi/java-guide/wiki/What-is-Enterprise-JavaBeans(EJB)%3F)
+#### [What is Enterprise JavaBeans(EJB)?](https://github.com/bhochhi/java-guide/wiki/What-is-Enterprise-JavaBeans(EJB)%3F)
 
-###[What is Passing by value or Passing by reference?](https://github.com/bhochhi/java-guide/wiki/what-is-Passing-by-value-or-Passing-by-reference)
+#### [What is Passing by value or Passing by reference?](https://github.com/bhochhi/java-guide/wiki/what-is-Passing-by-value-or-Passing-by-reference)
 
-### [Using Java Future]()
-    
+#### [Using Java Future/ CompletableFuture]()
+    - https://www.callicoder.com/java-8-completablefuture-tutorial/
+    - **http://codingjunkie.net/completable-futures-part1/**
+    - https://blog.krecan.net/2013/12/25/completablefutures-why-to-use-async-methods/
+    - http://www.deadcoderising.com/java8-writing-asynchronous-code-with-completablefuture/
 
 ###[Caching in Spring Application](http://www.ehcache.org/documentation/2.8/integrations/spring.html)
 
