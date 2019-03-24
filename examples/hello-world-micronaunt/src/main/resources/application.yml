@@ -1,3 +1,9 @@
 micronaut:
     application:
         name: hello-world-micronaunt
+    router:
+        static-resources:
+            swagger:
+                enabled: true
+                paths:  classpath:META-INF/swagger
+                mapping:    /swagger/**
