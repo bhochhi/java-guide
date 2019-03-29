@@ -8,6 +8,20 @@
 #### [microservice using micronaunt](https://docs.micronaut.io/latest/guide/index.html)  
 - [examples](https://github.com/bhochhi/java-guide/tree/master/examples/hello-world-micronaunt)
 
+### [Testing using Spock](http://spockframework.org/)
+- http://spockframework.org/spock/docs/1.3/index.html
+- https://semaphoreci.com/community/tutorials/stubbing-and-mocking-in-java-with-the-spock-testing-framework
+- https://www.baeldung.com/groovy-spock 
+- integration testing: 
+    * https://github.com/ytheohar/spock-example
+    * https://objectpartners.com/2017/04/18/spring-integration-testing-with-spock-mocks/  https://github.com/snekse/spring-spock-integration-testing  
+    * https://www.testwithspring.com/lesson/running-integration-tests-with-gradle-spock-edition/
+    * https://tedvinke.wordpress.com/2017/07/14/grails-3-3-integration-testing-with-spock-mocks/
+    * 
+    * **https://kiview.github.io/testcontainers-groovy-integration-tests-workshop/ ** . 
+ - Unit testing: 
+    * 
+    
 
 
 ##### [BDD using cucumber for unit tests](http://www.hascode.com/2014/12/bdd-testing-with-cucumber-java-and-junit/#Dependencies)
