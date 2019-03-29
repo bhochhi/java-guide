@@ -1,3 +1,9 @@
+#### [RAML specification for API Design]()
+- https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/ 
+- https://howtodoinjava.com/swagger2/swagger-spring-mvc-rest-example/ 
+
+
+
 
 #### [microservice using micronaunt](https://docs.micronaut.io/latest/guide/index.html)  
 - [examples](https://github.com/bhochhi/java-guide/tree/master/examples/hello-world-micronaunt)
