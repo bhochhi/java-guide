@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.bhoya.demo",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "5.8.2",
+    "applicationType": "microservice",
+    "baseName": "microservice",
+    "packageName": "com.bhoya.demo",
+    "packageFolder": "com/bhoya/demo",
+    "serverPort": "8081",
+    "authenticationType": "oauth2",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": "elasticsearch",
+    "messageBroker": "kafka",
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": true,
+    "jwtSecretKey": "MTZmY2MyNGMzZDliNGQzYWQ3OTIzMmI2ZGMwNzBiMmUyOWQ3MmY4YzMxZmFiMjFiMmRhNDkyZDVmY2JkMTk4ZWM5NDY2NTA4ZjE0MWE1NjIxZmIwOTZkYWYxNTZiNGE1OGVlODdiNmY0YTc3ODU5MjI5YWIyYTQ5ZjVhOWYyYTI=",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "en",
+    "languages": [
+      "en"
+    ],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
