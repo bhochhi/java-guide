@@ -1,0 +1,23 @@
+version: '2'
+services:
+    monolithic-couchbase:
+        build:
+            context: .
+            dockerfile: couchbase/Couchbase.Dockerfile
+        ports:
+            - 8091:8091
+            - 8092:8092
+            - 8093:8093
+            - 11210:11210
+        environment:
+            - TYPE=MASTER
+            - BUCKET=monolithic
+    monolithic-couchbase-node:
+        build:
+            context: .
+            dockerfile: couchbase/Couchbase.Dockerfile
+        environment:
+            - TYPE=WORKER
+            - BUCKET=monolithic
+            - COUCHBASE_MASTER=monolithic-couchbase
+            - AUTO_REBALANCE=false

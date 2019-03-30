@@ -1,0 +1,35 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.bhoya.demo"
+    },
+    "jhipsterVersion": "5.8.2",
+    "applicationType": "monolith",
+    "baseName": "monolithic",
+    "packageName": "com.bhoya.demo",
+    "packageFolder": "com/bhoya/demo",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "couchbase",
+    "devDatabaseType": "couchbase",
+    "prodDatabaseType": "couchbase",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZjVmMjM5MzkzZWU0NjEzNTA2Mjc2YWYzMzUwN2RmMTE5ZjQ2Njk2OGRkYmZjMjNjNmZlYTcwYWU5MTM1ZmIxNDdjNmFlM2FhOGYxZDZkOTQ4ODUxNTM4YmI5ODEzYWY3NmExNWQ4ZjU1NjIyMjc1ZWM1ZDhkZjc1MTJhYWMzNDE=",
+    "clientFramework": "react",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false
+  }
+}

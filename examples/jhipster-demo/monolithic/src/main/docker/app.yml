@@ -1,0 +1,16 @@
+version: '2'
+services:
+    monolithic-app:
+        image: monolithic
+        environment:
+            - _JAVA_OPTIONS=-Xmx512m -Xms256m
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_COUCHBASE_BOOTSTRAP_HOSTS=monolithic-couchbase
+            - SPRING_COUCHBASE_BUCKET_NAME=monolithic
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+        ports:
+            - 8080:8080
+    monolithic-couchbase:
+        extends:
+            file: couchbase.yml
+            service: monolithic-couchbase
