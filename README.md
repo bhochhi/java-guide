@@ -1,7 +1,41 @@
+#### [RAML specification for API Design]()
+- https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/ 
+- https://howtodoinjava.com/swagger2/swagger-spring-mvc-rest-example/ 
+
+
+
 
 #### [microservice using micronaunt](https://docs.micronaut.io/latest/guide/index.html)  
 - [examples](https://github.com/bhochhi/java-guide/tree/master/examples/hello-world-micronaunt)
 
+### [Testing using Spock](http://spockframework.org/)
+Spock provides highly expressive specification language, DSL. Key Selling points for using spock:
+- Data Driven Testing.
+- Interaction Based Testing.
+- Compatible with most IDEs, build tools and continuous integration servers.
+- Has [Web Console](http://meetspock.appspot.com/) that allows you to instantly view, edit, run, and even publish Spock specifications.
+- Compatible with Java and Groovy language interchangeability.
+- what is wrong with junit
+   - Ridiculous/Unreadable way of naming the test method. (Although junit5 has @Display(“for plain english title”))
+   - Intent of the test is not clear, all those Java verbosity and mocking frameworks make you exhausted and ready to give up.
+   - Junit/unit testing and Java, not the match made in heaven when It comes of BDD style testing.
+   - Parameterized testing to do Data Driven Testing is not simple with Junit
+- http://spockframework.org/spock/docs/1.3/index.html
+- **http://jakubdziworski.github.io/java/groovy/spock/2016/05/14/spock-cheatsheet.html** 
+- https://semaphoreci.com/community/tutorials/stubbing-and-mocking-in-java-with-the-spock-testing-framework
+- https://www.baeldung.com/groovy-spock 
+
+- integration testing: 
+    * https://github.com/ytheohar/spock-example
+    * https://objectpartners.com/2017/04/18/spring-integration-testing-with-spock-mocks/  https://github.com/snekse/spring-spock-integration-testing  
+    * https://www.testwithspring.com/lesson/running-integration-tests-with-gradle-spock-edition/
+    * https://tedvinke.wordpress.com/2017/07/14/grails-3-3-integration-testing-with-spock-mocks/
+    * 
+    * **https://kiview.github.io/testcontainers-groovy-integration-tests-workshop/ ** . 
+ - Unit testing: 
+    * 
+
+    
 
 
 ##### [BDD using cucumber for unit tests](http://www.hascode.com/2014/12/bdd-testing-with-cucumber-java-and-junit/#Dependencies)
